@@ -131,6 +131,22 @@
     <!-- Adicione suas dependências aqui, mas não altere as que já estão configuradas -->
 
     <dependency>
+      <artifactId>java-jwt</artifactId>
+      <groupId>com.auth0</groupId>
+      <version>4.4.0</version>
+    </dependency>
+    <dependency>
+      <artifactId>spring-boot-starter-security</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <version>3.1.1</version>
+    </dependency>
+    <dependency>
+      <artifactId>spring-security-test</artifactId>
+      <groupId>org.springframework.security</groupId>
+      <scope>test</scope>
+      <version>6.1.1</version>
+    </dependency>
+    <dependency>
       <artifactId>spring-boot-starter-actuator</artifactId>
       <groupId>org.springframework.boot</groupId>
     </dependency>

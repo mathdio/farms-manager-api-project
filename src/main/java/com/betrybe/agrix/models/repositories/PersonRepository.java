@@ -1,7 +1,6 @@
 package com.betrybe.agrix.models.repositories;
 
 import com.betrybe.agrix.models.entities.Person;
-import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -11,5 +10,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PersonRepository extends JpaRepository<Person, Long> {
 
-  Optional<Person> findByUsername(String username);
+//  Optional<Person> findByUsername(String username);
+
+  Person findByUsername(String username);
 }
