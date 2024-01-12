@@ -20,6 +20,13 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfiguration {
 
+//  private final SecurityFilter securityFilter;
+//
+//  @Autowired
+//  public SecurityConfiguration(SecurityFilter securityFilter) {
+//    this.securityFilter = securityFilter;
+//  }
+
   /**
    * Security filter chain security filter chain.
    *
@@ -38,6 +45,7 @@ public class SecurityConfiguration {
                 .requestMatchers(HttpMethod.POST, "/persons").permitAll()
                 .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
                 .anyRequest().authenticated())
+//        .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
         .build();
   }
 

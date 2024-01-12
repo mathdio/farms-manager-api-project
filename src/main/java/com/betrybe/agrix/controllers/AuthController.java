@@ -1,7 +1,7 @@
 package com.betrybe.agrix.controllers;
 
 import com.betrybe.agrix.controllers.dto.AuthenticationDto;
-import com.betrybe.agrix.controllers.dto.ResponseDto;
+import com.betrybe.agrix.controllers.dto.ResponseTokenDto;
 import com.betrybe.agrix.models.entities.Person;
 import com.betrybe.agrix.services.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +39,7 @@ public class AuthController {
    * @return the response entity
    */
   @PostMapping("/login")
-  public ResponseEntity<ResponseDto> login(
+  public ResponseEntity<ResponseTokenDto> login(
       @RequestBody AuthenticationDto authenticationDto
   ) {
     UsernamePasswordAuthenticationToken usernamePassword =
@@ -53,7 +53,8 @@ public class AuthController {
     Person person = (Person) auth.getPrincipal();
     String token = this.tokenService.generateToken(person);
 
-    ResponseDto<String> responseDto = new ResponseDto<>("Pessoa autenticada com sucesso!", token);
+    ResponseTokenDto<String> responseDto = new ResponseTokenDto<>("Pessoa autenticada com sucesso!",
+        token);
 
     return ResponseEntity.status(HttpStatus.OK).body(responseDto);
   }
