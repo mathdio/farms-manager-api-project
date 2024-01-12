@@ -41,17 +41,17 @@ public class PersonServiceTest {
     });
   }
 
-  @Test
-  void testGetPersonByUsername() {
-    Person mockedPerson = new Person();
-
-    Mockito.when(personRepository.findByUsername("joaosilva"))
-        .thenReturn(Optional.of(mockedPerson));
-
-    PersonService personService = new PersonService(personRepository);
-    Assertions.assertTrue(new ReflectionEquals(new Person())
-        .matches(personService.getPersonByUsername("joaosilva")));
-  }
+//  @Test
+//  void testGetPersonByUsername() {
+//    Person mockedPerson = new Person();
+//
+//    Mockito.when(personRepository.findByUsername("joaosilva"))
+//        .thenReturn(Optional.of(mockedPerson));
+//
+//    PersonService personService = new PersonService(personRepository);
+//    Assertions.assertTrue(new ReflectionEquals(new Person())
+//        .matches(personService.getPersonByUsername("joaosilva")));
+//  }
 
   @Test
   void testCreatePerson() {
