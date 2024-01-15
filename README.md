@@ -68,9 +68,13 @@ like [Thunder Client](https://www.thunderclient.com) or [Insomnia](https://insom
 The API endpoints are listed in the table below, as well as some examples of request body after the
 table.
 
+Only the first two endpoints bellow (`http://localhost:8080/people` and `http://localhost:8080/auth/login`) have public access. To access the other endpoints, the user must be authenticated, that is, the user must login to receive a token and add this token to requests to the other endpoints. Bellow the table, you can find requests bodies examples.
+
 Services and endpoints:
 | Service | Method | Endpoint |
 |  :---:  | :----: | :------: |
+| Create a person | POST | http://localhost:8080/people |
+| Login | POST | http://localhost:8080/auth/login |
 | Register a farm | POST | http://localhost:8080/farms |
 | Set a crop | POST | http://localhost:8080/farms/{farmId}/crops |
 | Register a fertilizer | POST | http://localhost:8080/fertilizers |
@@ -83,6 +87,14 @@ Services and endpoints:
 | Get a fertilizer by ID | GET | http://localhost:8080/fertilizers/{id} |
 | Get all fertilizers from a crop | GET | http://localhost:8080/crops/{cropId}/fertilizers |
 
+> Request body example to create a person:
+> ```
+> {
+>  "username":"johndoae",
+>  "password":"p4ssw0rd",
+>  "role": "ADMIN"
+> }
+> ```
 
 > Request body example to register a farm:
 > ```
@@ -101,11 +113,14 @@ Services and endpoints:
 > }
 > ```
 
+
 > To set a crop to a farm, you must pass the farm ID in the endpoint, as
 > in `http://localhost:8080/farms/1/crops`
 
+
 > To search crops by harvest date, two dates must be passed in the start and end parameters,
 > as in `http://localhost:8080/crops/search?start=2023-01-07&end=2024-01-10`
+
 
 > To set a fertilizer to a crop, you must pass the crop ID to which you want to associate the fertilizer and the fertilizer ID you want to associate,
 > as in `http://localhost:8080/crops/1/fertilizers/1`
