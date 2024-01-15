@@ -6,7 +6,7 @@ A farms manager and monitorer API, developed as a [Trybe](https://www.betrybe.co
 
 This is a API built in Java and using Spring framework, with which the user can monitor and manager a system of farms and theirs crops. 
 
-The API has endpoints that allow the users to: register new farms, set a crop to a farm, search farms by ID, search all farms, search for all crops from a farm, register a fertilizer, set a fertilizer to a crop, search for crops by harvest date, get all fertilizers, get a fertilizer by ID and get all fertilizers from a crop. Besides, an endpoint allows the users to create a person: a profile used by the application to manage the authentication and authorization. 
+The API has endpoints that allow the users to: register new farms, set a crop to a farm, search farms by ID, search all farms, search for all crops from a farm, register a fertilizer, set a fertilizer to a crop, search for crops by harvest date, get all fertilizers, get a fertilizer by ID and get all fertilizers from a crop. Besides, an endpoint allows the users to create a person: a profile used by the application to manage the authentication and authorization.
 The available endpoints are listed in a section below. 
 
 Some files were provided by [Trybe](https://www.betrybe.com), as the tables diagram in `/images` folder.
@@ -68,7 +68,7 @@ like [Thunder Client](https://www.thunderclient.com) or [Insomnia](https://insom
 The API endpoints are listed in the table below, as well as some examples of request body after the
 table.
 
-Only the first two endpoints bellow (`http://localhost:8080/people` and `http://localhost:8080/auth/login`) have public access. To access the other endpoints, the user must be authenticated, that is, the user must login to receive a token and add this token to requests to the other endpoints. Bellow the table, you can find requests bodies examples.
+⚠️ Only the first two endpoints bellow (`http://localhost:8080/people` and `http://localhost:8080/auth/login`) have public access. To access the other endpoints, the user must be authenticated, that is, the user must login to receive a token and add this token to requests to the other endpoints. Bellow the table, you can find requests bodies examples. Some endpoints has limited access to users authenticated with specific roles. A table bellow will list it.
 
 Services and endpoints:
 | Service | Method | Endpoint |
@@ -87,6 +87,13 @@ Services and endpoints:
 | Get a fertilizer by ID | GET | http://localhost:8080/fertilizers/{id} |
 | Get all fertilizers from a crop | GET | http://localhost:8080/crops/{cropId}/fertilizers |
 
+Limited access endpoints:
+| Endpoint | Method | Roles |
+| :------: | :----: | :---: |
+| http://localhost:8080/farms | GET | USER, MANAGER, ADMIN |
+| http://localhost:8080/crops | GET | MANAGER, ADMIN |
+| http://localhost:8080/fertilizers | GET | ADMIN |
+
 > Request body example to create a person:
 > ```
 > {
@@ -95,6 +102,23 @@ Services and endpoints:
 >  "role": "ADMIN"
 > }
 > ```
+
+
+> Request body example to login:
+> ```
+> {
+>  "username":"johndoae",
+>  "password":"p4ssw0rd"
+> }
+> ```
+
+> Response body example after login:
+> ```
+> {
+>  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhZ3JpeCIsInN1YiI6Im1ycm9ib3QiLCJleHAiOjE2ODk5ODY2NTN9.lyha4rMcMhFd_ij-farGCXuJy-1Tun1IpJd5Ot6z_5w"
+> }
+> ```
+
 
 > Request body example to register a farm:
 > ```
