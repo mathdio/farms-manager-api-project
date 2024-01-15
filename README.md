@@ -6,26 +6,30 @@ A farms manager and monitorer API, developed as a [Trybe](https://www.betrybe.co
 
 This is a API built in Java and using Spring framework, with which the user can monitor and manager a system of farms and theirs crops. 
 
-The API has endpoints that allow the users to: register new farms, set a crop to a farm, search farms by ID, search all farms, search for all crops from a farm, register a fertilizer, set a fertilizer to a crop, search for crops by harvest date, get all fertilizers, get a fertilizer by ID and get all fertilizers from a crop.
+The API has endpoints that allow the users to: register new farms, set a crop to a farm, search farms by ID, search all farms, search for all crops from a farm, register a fertilizer, set a fertilizer to a crop, search for crops by harvest date, get all fertilizers, get a fertilizer by ID and get all fertilizers from a crop. Besides, an endpoint allows the users to create a person: a profile used by the application to manage the authentication and authorization. 
 The available endpoints are listed in a section below. 
 
-Some files were provided by [Trybe](https://www.betrybe.com), as the tables diagram in `/images` folder and the files in `ebytr.staff` package, for example. The `ebytr.staff` package was not implemented in `agrix` package yet, but it was used by Trybe to evaluate tests creation.
+Some files were provided by [Trybe](https://www.betrybe.com), as the tables diagram in `/images` folder.
 
 ## 🛠️ Built with
 
 <a href="https://www.java.com/en/download/help/whatis_java.html" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" /></a>
+<a href="https://jwt.io" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens" alt="JSON Web Tokens" /></a>
 <a href="https://spring.io/quickstart" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white" alt="Spring" /></a>
 
 ## 🎯 Used skills
 
 - Spring Boot;
 - Spring Actuator;
-- Spring Data JPA
+- Spring Data JPA;
+- Spring Security;
 - RESTful API development;
 - Controller, service and persistence layers architecture;
 - Java Exceptions handling;
 - Unit tests;
 - Date fields handling;
+- Authentication and authorization;
+- JWT handling;
 - App dockerization.
 
 ## 🏁 Getting started
