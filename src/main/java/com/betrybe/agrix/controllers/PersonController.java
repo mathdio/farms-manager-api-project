@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  * The type Person controller.
  */
 @RestController
-@RequestMapping("/persons")
+@RequestMapping("/people")
 public class PersonController {
 
   private final PersonService personService;

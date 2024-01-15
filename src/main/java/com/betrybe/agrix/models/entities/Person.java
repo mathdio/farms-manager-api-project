@@ -19,7 +19,7 @@ import org.springframework.security.core.userdetails.UserDetails;
  * Class representing a person.
  */
 @Entity
-@Table(name = "persons")
+@Table(name = "people")
 public class Person implements UserDetails, GrantedAuthority {
 
   @Id
