@@ -112,13 +112,16 @@ Limited access endpoints:
 > }
 > ```
 
-> Response body example after login:
+> Response body to login request:
 > ```
 > {
 >  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhZ3JpeCIsInN1YiI6Im1ycm9ib3QiLCJleHAiOjE2ODk5ODY2NTN9.lyha4rMcMhFd_ij-farGCXuJy-1Tun1IpJd5Ot6z_5w"
 > }
 > ```
 
+
+> Request example using login token received: 
+> <img src="https://raw.githubusercontent.com/mathdio/farms-manager-api-project/main/images/request-with-token.png" />
 
 > Request body example to register a farm:
 > ```
