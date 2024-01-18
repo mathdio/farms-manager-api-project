@@ -68,7 +68,7 @@ like [Thunder Client](https://www.thunderclient.com) or [Insomnia](https://insom
 The API endpoints are listed in the table below, as well as some examples of request body after the
 table.
 
-⚠️ Only the first two endpoints bellow (`http://localhost:8080/people` and `http://localhost:8080/auth/login`) have public access. To access the other endpoints, the user must be authenticated, that is, the user must login to receive a token and add this token to requests to the other endpoints. Bellow the table, you can find requests bodies examples. Some endpoints has limited access to users authenticated with specific roles. A table bellow will list it.
+⚠️ Only the first two endpoints bellow (`http://localhost:8080/people` and `http://localhost:8080/auth/login`) have public access. To access the other endpoints, the user must be authenticated, that is, the user must login to receive a token and add this token to requests to the other endpoints. Also, the token expires in 2 hours, this time passed, the user must login again to receive a new token. Bellow the table, you can find requests bodies examples. Some endpoints has limited access to users authenticated with specific roles. A table bellow will list it.
 
 Services and endpoints:
 | Service | Method | Endpoint |
